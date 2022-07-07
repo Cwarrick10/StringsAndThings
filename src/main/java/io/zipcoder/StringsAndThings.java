@@ -77,7 +77,7 @@ public class StringsAndThings {
     public Boolean gIsHappy(String input) {
         for (int i = 2; i < input.length(); i++) {
             if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g')  {
-                return true;
+                return true;   //compare if index is duplicate
             }
             if(input.charAt(i - 1 )=='g' && input.charAt(i)== 'g') {
                 return true;
@@ -101,6 +101,13 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int trips = 0;
+        for(int i = 0; i <= input.length() - 3; i ++){
+            if(input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i+2))
+                trips++;    //account for three of char in 3 if statements
+        }
+
+
+        return trips;
     }
 }
