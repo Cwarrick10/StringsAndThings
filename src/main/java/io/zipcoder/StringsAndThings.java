@@ -40,23 +40,11 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        String newWord = "";
-        String sub = "";
-        int o = 0;
-        for (int i=0; i<base.length()-1; i++) {
-            String substring = base.substring(remove.length() + i, base.length());
-            if(remove.length()+o < base.length()) {
-                sub = base.substring(i, remove.length()+o);
-                o++;
-                if (sub.equals(remove))
-                    newWord = base.substring(0 , i) + substring;
+    public String removeString(String base, String remove) {
+//        String newWord = base; removeString
 
-            }    else if(sub.equals(remove))
-                   newWord = base.substring(1 , i) - substring;
+        return base.replace(remove, "");
 
-        }
-        return newWord;
     }
 
 
@@ -73,7 +61,8 @@ public class StringsAndThings {
 
         String s = "is";
         String n = "not";
-         for()
+
+
 
         return null;
     }
@@ -85,9 +74,23 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
+    public Boolean gIsHappy(String input) {
+        for (int i = 2; i < input.length(); i++) {
+            if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g')  {
+                return true;
+            }
+            if(input.charAt(i - 1 )=='g' && input.charAt(i)== 'g') {
+                return true;
+            }
+
+
+        }
+          return false;
     }
+
+
+
+
 
 
     /**
